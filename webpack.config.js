@@ -9,7 +9,7 @@ module.exports = {
     //source maps
     devtool: isDevelopment ? 'eval-source-map' : 'source-map',
     // Arquivo de entrada
-    entry: path.resolve(__dirname, 'src', 'index.jsx'),
+    entry: path.resolve(__dirname, 'src', 'index.tsx'),
     // Arquivo de saída
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -17,7 +17,7 @@ module.exports = {
     },
     resolve: {
         // tipos de arquivos que irá suportar
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
     },
     devServer: {
         static: {
@@ -35,7 +35,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.jsx$/,
+                test: /\.(j|t)sx$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
